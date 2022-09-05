@@ -7,7 +7,7 @@ type UserLayoutProps = {
 const UserLayout = ({ children }: UserLayoutProps) => {
   return (
     <>
-      <Box as="main" borderWidth="1px" p={4}>
+      <Box as="main" borderWidth="2px" bg="blue.900" p={4} h="100vh">
         {children}
       </Box>
     </>
