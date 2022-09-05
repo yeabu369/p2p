@@ -3,7 +3,7 @@ type UserLayoutProps = {
 }
 
 const UserLayout = ({ children }: UserLayoutProps) => {
-  return <>{children}</>
+  return <main>{children}</main>
 }
 
 export default UserLayout
