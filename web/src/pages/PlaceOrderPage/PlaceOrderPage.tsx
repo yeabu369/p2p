@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import {
   Button,
@@ -15,6 +15,15 @@ import {
 
 import { MetaTags } from '@redwoodjs/web'
 
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    Telegram: any
+  }
+}
+
+const tele = window.Telegram.WebApp
+
 const assets = [
   {
     name: 'TetherUSD',
@@ -29,6 +38,10 @@ const assets = [
 const PlaceOrderPage = () => {
   const [isBuyOrder, setIsBuyOrder] = useState(true)
   const [asset, setAsset] = useState(assets[0])
+
+  useEffect(() => {
+    tele.ready()
+  }, [])
 
   return (
     <Flex direction="column" h="full" color="white">
